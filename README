@@ -1,0 +1,8 @@
+以模块化的方式生成可执行文件
+#1
+mvn clean
+#2 以/home/liux/IdeaProjects/sms/runtime/src/assembly/runtime.xml文件做为依据
+mvn package
+#3 生成可执行文件的命令
+jlink -p /home/liux/IdeaProjects/sms/runtime/target/runtime-1.0-SNAPSHOT-dist-dir/modules/:/usr/local/lib/jvm/java/jmods
+    --add-modules sms.runtime --output ~/java9-sms --launcher sms=sms.runtime/sms.runtime.Main
